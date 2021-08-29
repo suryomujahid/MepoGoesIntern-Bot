@@ -3,7 +3,7 @@ const field = ['nama', 'nis', 'rayon', 'jurusan', 'rombel', 'instansi.nama', 'in
 
 module.exports = {
     name: 'set-data-pkl',
-    description: 'Data untuk absensi PKL harian',
+    description: 'Data untuk absensi PKL harian. Gunakan `_` sebagai **pengganti spasi**.',
     usage:'&&set-data-pkl <nama> <nis> <rayon> <jurusan> <rombel> <nama instansi> <nama pembimbing> <divisi>',
     example: '&&set-data-pkl Ketoprak_Sayur XXXX6969 Cianjur_2 RPL RPL_XI2 PT_Mochi_Mepo Pak_Jaya Full_Stuck_Overflow',
     execute(Discord, message, args){
@@ -12,6 +12,39 @@ module.exports = {
             if (args[i] == undefined) {
                 message.lineReply("Terdapat field yang kosong, jalankan perintah `&&data-pkl help` untuk melihat contoh pengisian field.");
                 next = false;
+                break;
+            }
+
+            if (i === 3) {
+                switch(args[i].toLowerCase()) {
+                    case 'rpl':
+                        args[i] = 'Rekayasa Perangkat Lunak (RPL)';
+                        break;
+                    case 'tkj':
+                        args[i] = 'Teknik Komputer dan Jaringan (TKJ)';
+                        break;
+                    case 'mmd':
+                        args[i] = 'Multimedia (MMD)';
+                        break;
+                    case 'bdp':
+                        args[i] = 'Bisnis Daring dan Pemasaran (BDP)';
+                        break;
+                    case 'otkp':
+                        args[i] = 'Otomatisasi dan Tata Kelola Perkantoran (OTKP)';
+                        break;
+                    case 'tbg':
+                        args[i] = 'Tata Boga (TBG)';
+                        break;
+                    case 'htl':
+                        args[i] = 'Perhotelan (HTL)';
+                        break;
+                    default:
+                        message.lineReply("Field jurusan yang bisa digunakan: `rpl`, `tkj`, `mmd`, `otkp`, `bdp`, `htl`, `tbg`.");
+                        next = false;
+                }
+            }
+
+            if (next === false) {
                 break;
             }
         }

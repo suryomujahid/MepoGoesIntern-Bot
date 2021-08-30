@@ -12,7 +12,7 @@ module.exports = {
 	        .setAuthor('MepoGoesIntern', 'https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
 	        .setDescription('prefixnya `&&`, ketik &&help <command-name> untuk informasi lebih lanjut setiap command')
 	        .setThumbnail('https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
-            .addField('💼  PKL', '`absen-pkl`', false)
+            .addField('💼  PKL', '`absen-pkl`, `jurnal-mingguan-pkl`', false)
             .addField('🧳  DATA PKL', '`data-pkl`, `set-data-pkl`, `edit-data-pkl`', false)
             .addField('⌨️  MISC', '`help`, `introduce`', false)
             .addField('🧰  UTILITY', '`ping`, `bug-report`', false)

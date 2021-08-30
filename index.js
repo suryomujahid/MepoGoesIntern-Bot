@@ -55,6 +55,9 @@ client.on("message", async (message) => {
         case("absen-pkl"):
             client.commands.get('absen-pkl').execute(Discord, message, args);
             break;
+        case("jurnal-mingguan-pkl"):
+            client.commands.get('jurnal-mingguan-pkl').execute(Discord, message, args);
+            break;
         case("data-pkl"):
             client.commands.get('data-pkl').execute(Discord, message, args);
             break;

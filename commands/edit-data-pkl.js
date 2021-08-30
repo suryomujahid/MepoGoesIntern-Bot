@@ -8,6 +8,7 @@ module.exports = {
     example: '&&edit-data-pkl nama John_Doe',
     execute(Discord, message, args){
         if (args[0] == undefined || args[1] == undefined) return message.lineReply("Terdapat field yang kosong, jalankan perintah `&&help edit-data-pkl` untuk melihat contoh pengisian field.")
+        if ((args.length - 1) > 1) return message.lineReply('Gunakan `_` sebagai **pengganti spasi**!');
 
         if (!field.includes(args[0])) return message.lineReply("Field yang diberikan salah. Field yang tersedia: " + field.join(', '));
 

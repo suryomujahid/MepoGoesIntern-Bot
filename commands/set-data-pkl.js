@@ -7,6 +7,8 @@ module.exports = {
     usage:'&&set-data-pkl <nama> <nis> <rayon> <jurusan> <rombel> <nama instansi> <nama pembimbing> <divisi>',
     example: '&&set-data-pkl Ketoprak_Sayur XXXX6969 Cianjur_2 RPL RPL_XI2 PT_Mochi_Mepo Pak_Jaya Full_Stuck_Overflow',
     execute(Discord, message, args){
+        if ((args.length - 1) > 7) return message.lineReply('Gunakan `_` sebagai **pengganti spasi**!');
+
         let next = true;
         for (i = 0; i < 8; i++) {
             if (args[i] == undefined) {

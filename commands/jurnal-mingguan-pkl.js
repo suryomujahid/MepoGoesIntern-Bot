@@ -10,6 +10,8 @@ module.exports = {
     example: '&&jurnal-mingguan-pkl 1 Mempelajari_struktur_dan_algoritma_pemrograman_java Gak_ada',
     execute(Discord, message, args){
         if (args[0] == undefined || args[1] == undefined || args[2] == undefined) return message.lineReply("Terdapat field yang kosong, jalankan perintah `&&help jurnal-mingguan-pkl` untuk melihat contoh pengisian field.")
+        if ((args.length - 1) > 2) return message.lineReply('Gunakan `_` sebagai **pengganti spasi**!');
+
         data = {
             nis: db.get(`data_${message.author.id}.nis`),
             nama:  db.get(`data_${message.author.id}.nama`),

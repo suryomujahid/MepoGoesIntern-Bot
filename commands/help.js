@@ -14,7 +14,7 @@ module.exports = {
 	        .setThumbnail('https://media-exp1.licdn.com/dms/image/C510BAQG1Nyx-6PqmhQ/company-logo_200_200/0/1558518784151?e=1635984000&v=beta&t=nwSVnkoBGnTTtYY3w_JTy88RZ8esHf_fTZW8zha8e-8')
             .addField('💼  PKL', '`absen-pkl`, `jurnal-mingguan-pkl`', false)
             .addField('🧳  DATA PKL', '`data-pkl`, `set-data-pkl`, `edit-data-pkl`', false)
-            .addField('⌨️  MISC', '`help`, `introduce`', false)
+            .addField('⌨️  MISC', '`tutorial`, `help`, `introduce`', false)
             .addField('🧰  UTILITY', '`ping`, `bug-report`', false)
             .addField('⭐  GitHub', 'Plz star my dev repo https://github.com/suryomujahid/MepoGoesIntern-Bot', false)
             .addField('Contributor', 'altf4m88 | Metclocker | Saekyo', false)

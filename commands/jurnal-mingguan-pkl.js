@@ -64,7 +64,17 @@ module.exports = {
                 .setTimestamp()
                 .setFooter(`Diminta oleh ${message.author.username}`);
 
-            return message.lineReply(replyEmbed);
+            message.lineReply(replyEmbed);
+
+            let embed = new Discord.MessageEmbed()
+                .setTitle(`Link Jurnal Mingguan PKL`)
+                .setColor('RANDOM')
+                .setAuthor('MepoGoesIntern', 'https://static.wikia.nocookie.net/meme-yeet/images/2/2e/Roll_safe.png/revision/latest?cb=20190630031720')
+                .setDescription(url.split('formResponse').join('viewform'))
+                .addField('Diatas merupakan link jurnal mingguan yang berhasil kami kirim', '\u200B')
+                .setFooter(`aquila non captat muscas`)
+
+            return message.author.send(embed);
         })
         .catch((error) =>  {
             message.lineReply('There\'s an error occured while fetching API. Error: ' + error);

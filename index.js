@@ -73,6 +73,9 @@ client.on("message", async (message) => {
         case("tutorial"):
             client.commands.get('tutorial').execute(Discord, message, args);
             break;
+        case("convert"):
+            client.commands.get('convert').execute(Discord, message, args);
+            break;
         case("bug-report"):
             client.commands.get('bug-report').execute(client, Discord, message, args);
             break;

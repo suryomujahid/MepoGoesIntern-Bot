@@ -15,7 +15,7 @@ module.exports = {
             .addField('💼  PKL', '`absen-pkl`, `jurnal-mingguan-pkl`', false)
             .addField('🧳  DATA PKL', '`data-pkl`, `set-data-pkl`, `edit-data-pkl`', false)
             .addField('⌨️  MISC', '`tutorial`, `help`, `introduce`', false)
-            .addField('🧰  UTILITY', '`ping`, `bug-report`', false)
+            .addField('🧰  UTILITY', '`convert`, `ping`, `bug-report`', false)
             .addField('⭐  GitHub', 'Plz star my dev repo https://github.com/suryomujahid/MepoGoesIntern-Bot', false)
             .addField('Contributor', 'altf4m88 | Metclocker | Saekyo', false)
             .setTimestamp()

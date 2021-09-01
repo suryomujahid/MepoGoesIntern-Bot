@@ -1,10 +1,5 @@
-const today = new Date;
-today.toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })
 const fetch = require("node-fetch");
 const db = require('quick.db');
-let year = today.getFullYear();
-let month = ("0" + (today.getMonth() + 1)).slice(-2);
-let date = ("0" + today.getDate()).slice(-2);
 
 module.exports = {
     name: 'absen-pkl',
@@ -28,6 +23,12 @@ module.exports = {
         if (Object.values(data).some(x => x == null)) return message.lineReply("Personal data belum / tidak lengkap, jalankan perintah `&&help set-data-pkl` atau `&&help edit-data-pkl`.");
 
         const periode = 'Agustus s/d Oktober 2021';
+
+        const today = new Date(new Date().toLocaleDateString('id-ID', { timeZone: 'Asia/Jakarta' }));
+
+        let year = today.getFullYear();
+        let month = ("0" + (today.getMonth() + 1)).slice(-2);
+        let date = ("0" + today.getDate()).slice(-2);
 
         let url = `https://docs.google.com/forms/d/e/1FAIpQLSdm_NZsgcbGQOvtIcy8S7Yi_jSkA7bGYC7Q3i9ArnPd79qGaQ/formResponse`;
         url += `?entry.1166618695=${periode}`;

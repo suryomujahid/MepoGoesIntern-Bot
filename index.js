@@ -40,6 +40,7 @@ client.once("ready", () => {
 client.on("message", async (message) => {
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
+    if (message.channel instanceof Discord.DMChannel) return;
 
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(" ");

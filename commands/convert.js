@@ -8,7 +8,7 @@ module.exports = {
 
         const sentence = args.join(" ");
 
-        return message.lineReply(sentence.split(' ').join('_'));
+        return message.lineReply("```" + sentence.split(' ').join('_') + "```" + "```" + sentence.split('__').join(" ") + "```");
     }
 
 }

@@ -12,7 +12,7 @@ module.exports = {
         let next = true;
         for (i = 0; i < 8; i++) {
             if (args[i] == undefined) {
-                message.lineReply("Terdapat field yang kosong, jalankan perintah `&&data-pkl help` untuk melihat contoh pengisian field.");
+                message.lineReply("Terdapat field yang kosong, jalankan perintah `&&help set-data-pkl` untuk melihat contoh pengisian field.");
                 next = false;
                 break;
             }

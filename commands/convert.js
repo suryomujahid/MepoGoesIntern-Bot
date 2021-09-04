@@ -1,8 +1,8 @@
 module.exports = {
     name: 'convert',
-    description: 'Konversi kalimat yang memiliki `spasi` menjadi `_` (underscore)',
+    description: 'Konversi kalimat yang memiliki `spasi` menjadi `_` (underscore). Hasil dari contoh: `ini_kalimat_pertama ini_kalimat_kedua`',
     usage:'&&convert <kalimat>',
-    example: '&&convert lorem ipsum dolor sit amet',
+    example: '&&convert ini kalimat pertama__ini kalimat kedua',
     execute(Discord, message, args){
         if (args.join(" ") == '') return message.lineReply('Masukin kalimatnya dulu bang');
 

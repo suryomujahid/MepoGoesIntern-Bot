@@ -46,39 +46,28 @@ module.exports = {
         url += `&entry.584985983=${data.instansi.pembimbing}`;
         url += `&entry.432046909=${data.instansi.divisi}`;
         url += `&entry.497287683=${args[1].split("_").join(" ")}`;
-        url += `&entry.1629167108=${args[0].split("_").join(" ")}`;
+        url += `&entry.1629167108=${args[2].split("_").join(" ")}`;
         url = url.split(" ").join("%20");
 
-        fetch(
-            url,
-            {
-                method: 'GET',
-            }
-        )
-        .then(() => {
-            let replyEmbed = new Discord.MessageEmbed()
-                .setTitle(`Sukses mengisi jurnal minggu ke-${args[0]}`)
-                .setColor('RANDOM')
-                .setAuthor('MepoGoesIntern', 'https://static.wikia.nocookie.net/meme-yeet/images/2/2e/Roll_safe.png/revision/latest?cb=20190630031720')
-                .setDescription(`Periode: ${periode}`)
-                .setTimestamp()
-                .setFooter(`Diminta oleh ${message.author.username}`);
+        let replyEmbed = new Discord.MessageEmbed()
+            .setTitle(`Sukses mengirim link jurnal mingguan PKL`)
+            .setColor('RANDOM')
+            .setAuthor('MepoGoesIntern', 'https://static.wikia.nocookie.net/meme-yeet/images/2/2e/Roll_safe.png/revision/latest?cb=20190630031720')
+            .setDescription(`Cek DM mu`)
+            .setTimestamp()
+            .setFooter(`Diminta oleh ${message.author.username}`);
 
-            message.lineReply(replyEmbed);
+        message.lineReply(replyEmbed);
 
-            let embed = new Discord.MessageEmbed()
-                .setTitle(`Link Jurnal Mingguan PKL`)
-                .setColor('RANDOM')
-                .setAuthor('MepoGoesIntern', 'https://static.wikia.nocookie.net/meme-yeet/images/2/2e/Roll_safe.png/revision/latest?cb=20190630031720')
-                .setDescription(url.split('formResponse').join('viewform'))
-                .addField('Diatas merupakan link jurnal mingguan yang berhasil kami kirim', '\u200B')
-                .setFooter(`aquila non captat muscas`)
+        let embed = new Discord.MessageEmbed()
+            .setTitle(`Tekan link untuk melakukan jurnal mingguan`)
+            .setColor('RANDOM')
+            .setAuthor('MepoGoesIntern', 'https://static.wikia.nocookie.net/meme-yeet/images/2/2e/Roll_safe.png/revision/latest?cb=20190630031720')
+            .setDescription(url)
+            .addField('Pengisian formulir perlu menggunakan akun sch', '\u200B')
+            .setFooter(`aquila non captat muscas`)
 
-            return message.author.send(embed);
-        })
-        .catch((error) =>  {
-            message.lineReply('There\'s an error occured while fetching API. Error: ' + error);
-        });
+        return message.author.send(embed);
     }
 
 }
